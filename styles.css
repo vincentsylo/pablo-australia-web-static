@@ -1,0 +1,55 @@
+html, body {
+  background-color: #f6f3e2;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main {
+  color: #fff;
+  background: #000;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.title {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.social {
+  margin-top: 24px;
+}
+
+.social img {
+  width: 50px;
+  margin: 0 8px;
+}
+
+.content {
+  background: url('bg_contents.gif') repeat;
+  flex: 1;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hiring {
+  padding: 16px;
+  text-align: center;
+}
