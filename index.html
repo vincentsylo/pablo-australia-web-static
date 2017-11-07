@@ -33,7 +33,9 @@
         <div class="container">
             <div class="main">
                 <h1><img src="logo.jpg" alt="PABLO Australia" /></h1>
-                <span class="title">WE ARE OPENING SOON</span>
+                <h2 class="title" id="timer"></h2>
+
+                <span class="title" id="openText"></span>
                 <span class="title">IN SYDNEY AUSTRALIA</span>
                 <div class="social">
                     <a href="https://www.facebook.com/PabloCheesetartAustralia/"><img src="fb.png" alt="Facebook" /></a>
@@ -48,5 +50,41 @@
                 </div>
             </div>
         </div>
+
+        <script>
+          var countDownDate = new Date('Nov 14, 2017 12:00:00').getTime();
+
+          function countdown() {
+            var now = new Date().getTime();
+
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            var timer = document.getElementById('timer');
+            if (days > 1) {
+              timer.innerHTML = days + ' DAYS TO GO!';
+            } else if (days === 1) {
+              timer.innerHTML = days + ' DAY TO GO!';
+            } else {
+              timer.innerHTML = hours + ' HOURS ' + minutes + ' MINUTES ' + seconds + ' SECONDS';
+            }
+
+            var openText = document.getElementById('openText');
+            if (distance < 0) {
+              clearInterval(x);
+              timer.innerHTML = '';
+              openText.innerHTML = 'WE ARE NOW OPEN';
+            } else {
+              openText.innerHTML = 'WE ARE OPENING SOON';
+            }
+          }
+
+          countdown();
+          var x = setInterval(countdown, 1000);
+        </script>
     </body>
 </html>
